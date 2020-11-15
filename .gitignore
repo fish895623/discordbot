@@ -1,3 +1,4 @@
+# vscode
 .vscode/
 *credential*
 
@@ -6,3 +7,7 @@ target/
 .project
 .settings
 .classpath
+
+# intellij ignore
+*.iml
+.idea
