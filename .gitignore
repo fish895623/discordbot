@@ -1,2 +1,8 @@
 .vscode/
 *credential*
+
+# java maen exclude
+target/
+.project
+.settings
+.classpath
