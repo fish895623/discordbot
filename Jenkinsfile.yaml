@@ -1,0 +1,14 @@
+pipeline:
+  agent: none
+  stages:
+    - stage: "Parrallel Test"
+      parallel:
+        - stage: "build-test-1"
+          steps:
+            - echo 1
+        - stage: "build-test-1"
+          steps:
+            - echo 1
+        - stage: "build-test-1"
+          steps:
+            - echo 1
