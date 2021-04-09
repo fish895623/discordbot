@@ -5,10 +5,10 @@ pipeline:
       parallel:
         - stage: "build-test-1"
           steps:
-            - echo 1
+            - sh "echo 1"
         - stage: "build-test-1"
           steps:
-            - echo 1
+            - sh "echo 1"
         - stage: "build-test-1"
           steps:
-            - echo 1
+            - sh "echo 1"
