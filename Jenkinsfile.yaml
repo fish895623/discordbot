@@ -1,7 +1,8 @@
 pipeline:
-  agent: 
+  agent:
     docker:
-      image: 'fish895623/ddocker:latest'
+      image: "fish895623/ddocker:latest"
+      args: '-v /var/run/docker.sock:/var/run/docker.sock'
   stages:
     - stage: "Parrallel Test"
       parallel:
@@ -16,4 +17,4 @@ pipeline:
             - sh "echo 1"
     - stage: "build Docker"
       steps:
-        - sh "docker-compose build"
+        - sh "docker build -t fish895623/aa:latest ."
