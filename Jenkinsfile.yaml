@@ -1,8 +1,6 @@
 pipeline:
-  agent: 
-    docker:
-      image: 'ubuntu:latest'
-  stages:
+  agent: any
+    stages:
     - stage: "Parrallel Test"
       parallel:
         - stage: "build-test-1"
