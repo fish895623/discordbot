@@ -4,7 +4,7 @@ pipeline {
     stage('Set Variables') {
       steps {
         script {
-          withCredentials([usernameColonPassword(credentialsId: 'ghcr', variable: 'REGIS_TOKEN')])
+          withCredentials([string(credentialsId: 'ghcr', variable: 'REGIS_TOKEN')])
         }
     stage('Build image') {
       steps {
