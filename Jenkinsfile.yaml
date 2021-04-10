@@ -1,5 +1,5 @@
 pipeline:
-  agent: none
+  agent: image: ubuntu:latest
   stages:
     - stage: "Parrallel Test"
       parallel:
