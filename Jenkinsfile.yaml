@@ -17,4 +17,5 @@ pipeline:
             - sh "echo 1"
     - stage: "build Docker"
       steps:
-        - sh "docker build -t fish895623/aa:latest ."
+        - sh "docker-compose build"
+        // - sh "docker build -t fish895623/aa:latest ."
