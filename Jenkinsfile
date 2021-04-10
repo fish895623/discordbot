@@ -1,12 +1,19 @@
 pipeline {
   agent any
   stages {
+    stage('Set Variables') {
+      steps {
+        script {
+          withCredentials([usernameColonPassword(credentialsId: 'ghcr', variable: 'REGIS_TOKEN')])
+        }
     stage('Build image') {
       steps {
         echo 'Starting to build docker image'
         script {
-          def customImage = docker.build("my-image:${env.BUILD_ID}")
-          customImage.push()
+          docker.withRegistry('ghcr.io', $REGIS_TOKEN) {
+            def customImage = docker.build("ghcr.io/fish895623/my-image:${env.BUILD_ID}")
+            customImage.push()
+          }
         }
       }
     }
