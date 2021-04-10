@@ -6,6 +6,8 @@ pipeline {
         script {
           withCredentials([string(credentialsId: 'ghcr', variable: 'REGIS_TOKEN')])
         }
+      }
+    }
     stage('Build image') {
       steps {
         echo 'Starting to build docker image'
