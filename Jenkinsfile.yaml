@@ -1,5 +1,7 @@
 pipeline:
-  agent: any
+  agent: 
+    docker:
+      image: 'fish895623/ddocker:latest'
   stages:
     - stage: "Parrallel Test"
       parallel:
