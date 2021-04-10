@@ -1,13 +1,9 @@
 pipeline {
   agent any
+  environment {
+    REGIS_TOKEN = credentials('ghcr')
+  }
   stages {
-    stage('Set Variables') {
-      steps {
-        script {
-          withCredentials([string(credentialsId: 'ghcr', variable: 'REGIS_TOKEN')])
-        }
-      }
-    }
     stage('Build image') {
       steps {
         echo 'Starting to build docker image'
