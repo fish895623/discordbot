@@ -18,4 +18,3 @@ pipeline:
     - stage: "build Docker"
       steps:
         - sh "docker-compose build"
-        // - sh "docker build -t fish895623/aa:latest ."
