@@ -1,5 +1,5 @@
 pipeline {
-  agent { docker: "fish895623/ddocker:latest" }
+  agent any
   stages {
     stage('Build image') {
       steps {
