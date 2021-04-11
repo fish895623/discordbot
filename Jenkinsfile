@@ -19,7 +19,7 @@ pipeline {
         echo 'abcd'
         script {
           docker.withRegistry('https://ghcr.io/', registryCredential) {
-            Docker_Image.push("${BRANCH_NAME}${BUILD_NUMBER}")
+            Docker_Image.push("${BRANCH_NAME}_${BUILD_NUMBER}")
             Docker_Image.push('latest')
           }
         }
