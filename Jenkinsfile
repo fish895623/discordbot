@@ -16,7 +16,7 @@ pipeline {
       steps {
         echo 'abcd'
         script {
-          docker.withRegistry('https://ghcr.io/fish895623', REGIS_TOKEN) {
+          docker.withRegistry('https://ghcr.io/', REGIS_TOKEN) {
             Docker_Image.push('latest')
           }
         }
