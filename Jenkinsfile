@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    REGIS_TOKEN = credentials('ghcr')
+    REGIS_TOKEN = credentials('ghcrio')
   }
   stages {
     stage('Build image') {
