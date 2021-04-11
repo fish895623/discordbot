@@ -1,7 +1,6 @@
 pipeline {
   agent any
   environment {
-    REGIS_TOKEN = credentials('ghcrio')
     imagename = 'ghcr.io/fish895623/my-image'
     registryCredential = 'ghcrio'
     Docker_Image = ''
@@ -20,6 +19,7 @@ pipeline {
         echo 'abcd'
         script {
           docker.withRegistry('https://ghcr.io/', registryCredential) {
+            Docker_Image.push("$GIT_REVISION")
             Docker_Image.push("$BUILD_NUMBER")
             Docker_Image.push('latest')
           }
