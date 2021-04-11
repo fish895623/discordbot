@@ -16,7 +16,7 @@ pipeline {
     }
     stage('Deploy Image') {
       steps {
-        echo 'abcd'
+        echo 'Deploy to Registry'
         script {
           docker.withRegistry('https://ghcr.io/', registryCredential) {
             Docker_Image.push("${BRANCH_NAME}_${BUILD_NUMBER}")
